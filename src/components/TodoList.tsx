@@ -11,6 +11,8 @@ export const TodoList = () => {
   const classes = useStyles();
 
   return (
-    <ul className={classes.list}></ul>
+    <ul className={classes.list}>
+      {}
+    </ul>
   );
 }

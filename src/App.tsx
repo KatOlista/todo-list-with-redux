@@ -1,11 +1,16 @@
 import { createUseStyles } from 'react-jss';
-import { Footer, Header, TodoList } from './components';
+
+import { useAppSelector } from './app/hooks';
+import { 
+  ErrorNotification, 
+  Footer, 
+  Header, 
+  TodoList, 
+} from './components';
 
 const useStyles = createUseStyles({
   app: {
     minWidth: 320,
-    width: '70%',
-    height: '65vh',
     padding: 5,
     borderRadius: 5,
     backgroundColor: '#0b9561',
@@ -17,6 +22,8 @@ const useStyles = createUseStyles({
 export const App = () => {
   const classes = useStyles();
 
+  const { error, errorMessage } = useAppSelector(state => state.newTodo);
+
   return (
     <div className={classes.app}>
       <Header />
@@ -24,6 +31,10 @@ export const App = () => {
       <TodoList />
 
       <Footer />
+
+      {error && (
+        <ErrorNotification errorMessage={errorMessage} />
+      )}
     </div>
   );
 };
