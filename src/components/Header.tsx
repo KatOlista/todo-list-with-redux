@@ -9,14 +9,13 @@ import {
   setError, 
   setTitle, 
 } from '../features/newTodoSlice';
+import { ErrorNotification } from '.';
 
 const useStyles = createUseStyles({
-  header: {
-  },
   form: {},
   input: {
     width: '100%',
-    padding: 16,
+    padding: '16px 16px 16px 60px',
     fontSize: 24,
     lineHeight: '1.4em',
     fontFamily: 'inherit',
@@ -45,12 +44,13 @@ export const Header = () => {
 
   const dispatch = useAppDispatch();
   const { title } = useAppSelector(state => state.newTodo);
+  const { error } = useAppSelector(state => state.newTodo);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(setTitle(e.target.value));
+  const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(setTitle(e.target.value.trim()));
     dispatch(setError({ 
       error: false, 
-      errorMassage: ERROR_MESSAGES.default, 
+      errorMassage: ERROR_MESSAGES.default,
     }));
   }
 
@@ -58,11 +58,17 @@ export const Header = () => {
     e.preventDefault();
 
     if (!title) {
-      dispatch(setError({ 
+      return dispatch(setError({ 
         error: true, 
         errorMassage: ERROR_MESSAGES.emptyTitle, 
       }));
-      return;
+    }
+
+    if (title.length > MAX_LENGTH) {
+      return dispatch(setError({ 
+        error: true, 
+        errorMassage: ERROR_MESSAGES.tooLongTitle, 
+      }));
     }
 
     const newTodo = {
@@ -77,19 +83,21 @@ export const Header = () => {
   };
   
   return (
-    <header className={classes.header}>
+    <header>
+      {error && (
+        <ErrorNotification />
+      )}
+
       <form 
         className={classes.form} 
         onSubmit={(e) => handleSubmitForm(e)}
       >
         <input
-          data-cy="NewTodoField"
           value={title}
           type="text"
-          maxLength={MAX_LENGTH}
           className={classes.input}
           placeholder="What needs to be done?"
-          onChange={handleChange}
+          onChange={handleChangeInput}
         />
       </form>
     </header>
