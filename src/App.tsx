@@ -30,9 +30,7 @@ export const App = () => {
       <Header />
 
       {isListVisible && (
-        <div className=''>
-          <TodoList />
-        </div>
+        <TodoList />
       )}
 
       <Footer />
