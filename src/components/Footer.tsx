@@ -26,8 +26,10 @@ export const Footer = () => {
   const classes = useStyles();
 
   const handleExportTodosAsImg = () => {
-    html2canvas(document.getElementById('capture') as HTMLElement)
-      ?.then(canvas => {
+    const capturedElement = document.getElementById('capture') as HTMLElement;
+    const liArray = Array.from(capturedElement.getElementsByTagName('li'));
+    liArray.forEach(li => li.classList.remove('animate__slideInDown'));
+    html2canvas(capturedElement)?.then(canvas => {
         const fileName = 'todos.png';
         const href = canvas.toDataURL('image/png');
         const element = document.createElement('a');
@@ -36,6 +38,7 @@ export const Footer = () => {
         document.body.appendChild(element);
         element.click();
         document.body.removeChild(element);
+        liArray.forEach(li => li.classList.add('animate__slideInDown'));
     });
   };
 
