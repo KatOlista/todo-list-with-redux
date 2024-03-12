@@ -1,4 +1,5 @@
 import { createUseStyles } from 'react-jss';
+import 'animate.css';
 
 import { useAppSelector } from '../app/hooks';
 
@@ -29,7 +30,7 @@ export const ErrorNotification = () => {
   const { errorMessage } = useAppSelector(state => state.newTodo);
 
   return (
-    <div className={classes.errorsContainer}>
+    <div className={`${classes.errorsContainer} animate__animated animate__fadeIn animate__slow`}>
       <p className={classes.message}>{errorMessage}</p>
     </div>
   );

@@ -21,15 +21,18 @@ const useStyles = createUseStyles({
 
 export const App = () => {
   const classes = useStyles();
-
+  
   const { todos } = useAppSelector(state => state.todos);
+  const isListVisible = !!todos.length;
 
   return (
     <div className={classes.app}>
       <Header />
 
-      {!!todos.length && (
+      {isListVisible && (
+        <div className=''>
           <TodoList />
+        </div>
       )}
 
       <Footer />

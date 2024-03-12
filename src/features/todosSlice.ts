@@ -20,7 +20,7 @@ export const todosSlice = createSlice({
       return state;
     },
     addTodo: (state, action: PayloadAction<Todo>) => {
-      state.todos.push(action.payload);
+      state.todos.unshift(action.payload);
     },
   },
 });

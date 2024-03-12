@@ -61,7 +61,7 @@ export const TodoItem: React.FC<Props> = ({ todo }) => {
   };
 
   return (
-    <li className={classes.item}>
+    <li className={`${classes.item} animate__slideInDown animate__animated animate__fast`}>
       <label className={classes.label}>
         <div className={cn(
           classes.status,

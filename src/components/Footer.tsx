@@ -10,8 +10,9 @@ const useStyles = createUseStyles({
   },
   buttons: {
     display: 'flex',
-    alignItems: 'center',
+    alignItems: 'stretch',
     justifyContent: 'space-between',
+    gap: 20,
   },
   todoCount: {
     paddingTop: 10,
@@ -24,7 +25,7 @@ const useStyles = createUseStyles({
 export const Footer = () => {
   const classes = useStyles();
 
-  const exportTodosAsImgHandler = () => {
+  const handleExportTodosAsImg = () => {
     html2canvas(document.getElementById('capture') as HTMLElement)
       ?.then(canvas => {
         const fileName = 'todos.png';
@@ -50,7 +51,7 @@ export const Footer = () => {
 
         <Button
           option='Download as png'
-          onClick={exportTodosAsImgHandler}
+          onClick={handleExportTodosAsImg}
         />
       </div>
 

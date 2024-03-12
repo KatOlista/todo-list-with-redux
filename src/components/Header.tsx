@@ -1,4 +1,5 @@
 import { createUseStyles } from 'react-jss';
+import 'animate.css';
 import { v4 as uuid } from 'uuid';
 
 import { useAppDispatch, useAppSelector } from '../app/hooks';
@@ -12,10 +13,12 @@ import {
 import { ErrorNotification } from '.';
 
 const useStyles = createUseStyles({
-  form: {},
+  form: {
+    paddingBlock: 10,
+  },
   input: {
     width: '100%',
-    padding: '16px 16px 16px 60px',
+    padding: 16,
     fontSize: 24,
     lineHeight: '1.4em',
     fontFamily: 'inherit',

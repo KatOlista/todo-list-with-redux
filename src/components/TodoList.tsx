@@ -7,8 +7,11 @@ import { Todo } from '../types';
 
 const useStyles = createUseStyles({
   list: {
+    margin: 0,
     padding: 5,
     backgroundColor: '#0b9561',
+    animationName: 'appearance',
+    animationDuration: '0.5s',
   },
 });
 
@@ -36,7 +39,10 @@ export const TodoList = () => {
   }, [todos, selectedOption]);
 
   return (
-    <ul className={classes.list} id="capture">
+    <ul 
+      className={classes.list}
+      id="capture"
+    >
       {filteredTodos.map(todo => (
         <TodoItem key={todo.id} todo={todo} />
       ))}
