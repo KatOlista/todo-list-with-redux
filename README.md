@@ -1,18 +1,18 @@
-# ToDo List
+# TaskFlow
 
-ToDo list is a simple web application to save Your daily tasks in order not to miss anything.
+TaskFlow is a simple web application that allows you to create and download your daily tasks to avoid missing anything.
 
 
 ## Features:
 
 - Add new task
-- Show an error if added task length is 0 or more than N characters
+- Show an error if the added task length is 0 or more than N characters
 - A new task is added if its length is less than or equal to N characters
 - Display a list of added records
 - Filtering tasks by type (all, completed, active)
-- Switching the status of task as completed / uncompleted
-- Display counter of completed and uncompleted tasks
-- Download list of tasks as a PNG picture
+- Switching the status of the task as completed / uncompleted
+- Display a counter of completed and uncompleted tasks
+- Download the list of tasks as a PNG picture
 
 
 ## Technologies used:
