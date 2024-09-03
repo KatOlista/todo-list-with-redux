@@ -1,24 +1,41 @@
 import { createUseStyles } from 'react-jss';
 import cn from 'classnames';
+
 import { useAppSelector } from '../../app/hooks';
 
 const useStyles = createUseStyles({
   button: {
-    padding: 5,
-    backgroundColor: '#3DCA95',
+    padding: '10px 20px',
+    width: '100%',
+    backgroundColor: '#5a5858',
     color: '#fff',
     borderRadius: 5,
-    border: '2px solid transparent',
-    boxShadow: '3px 3px 4px #227052',
+    border: '1px solid transparent',
+    boxShadow: '1px 1px 4px #fff',
+
     transition: 'all 0.3s ease',
 
-    '&:hover': {
+    '&:active': {
       borderColor: '#fff',
-      transform: 'scale(1.05)',
+      transform: 'scale(0.95)',
     },
+
+    '@media (min-width: 425px)': {
+      fontSize: 16,
+    },
+
+    '@media (min-width: 990px)': {
+      fontSize: 20,
+
+      '&:hover': {
+        borderColor: '#fff',
+        transform: 'scale(0.97)',
+        cursor: 'pointer',
+      },
+    }
   },
   selected: {
-    backgroundColor: '#82d4b5',
+    backgroundColor: '#0bcdd7',
   },
 });
 

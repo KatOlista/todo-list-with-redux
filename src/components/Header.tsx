@@ -19,7 +19,7 @@ const useStyles = createUseStyles({
   input: {
     width: '100%',
     padding: 16,
-    fontSize: 24,
+    fontSize: 20,
     lineHeight: '1.4em',
     fontFamily: 'inherit',
     fontWeight: 'inherit',
@@ -34,7 +34,7 @@ const useStyles = createUseStyles({
     '&::placeholder': {
       fontStyle: 'italic',
       fontWeight: 300,
-      color: '#e6e6e6',
+      color: '#0bcdd7',
     },
     '&:focus-visible': {
       outline: 'white auto 1px',
@@ -99,7 +99,7 @@ export const Header = () => {
           value={title}
           type="text"
           className={classes.input}
-          placeholder="What needs to be done?"
+          placeholder="What do you need to do?"
           onChange={handleChangeInput}
         />
       </form>

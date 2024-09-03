@@ -9,17 +9,33 @@ const useStyles = createUseStyles({
     padding: 10,
   },
   buttons: {
+    paddingTop: 5,
+    paddingBottom: 15,
     display: 'flex',
     alignItems: 'stretch',
     justifyContent: 'space-between',
     gap: 20,
   },
   todoCount: {
-    paddingTop: 10,
+    paddingTop: 15,
     display: 'flex',
     justifyContent: 'space-between',
     color: '#fff',
   },
+
+  '@media (min-width: 990px)': {
+    footer: {
+      padding: 25,
+    },
+
+    buttons: {
+      paddingBottom: 25,
+    },
+    
+    todoCount: {
+      paddingTop: 25
+    }
+  }
 });
 
 export const Footer = () => {
@@ -51,12 +67,12 @@ export const Footer = () => {
     <footer className={classes.footer}> 
       <div className={classes.buttons}>
         <Filter />
-
-        <Button
-          option='Download as png'
-          onClick={handleExportTodosAsImg}
-        />
       </div>
+
+      <Button
+        option='Download as png'
+        onClick={handleExportTodosAsImg}
+      />
 
       <div className={classes.todoCount}>
         <span>

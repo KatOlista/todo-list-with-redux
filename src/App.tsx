@@ -9,14 +9,34 @@ import {
 
 const useStyles = createUseStyles({
   app: {
-    margin: '150px auto 0',
+  },
+
+  content: {
+    margin: '100px auto 100px',
     position: 'relative',
-    minWidth: 320,
+    minWidth: 290,
     padding: 5,
     borderRadius: 5,
-    backgroundColor: '#0b9561',
-    boxShadow: '3px 5px 7px #227052',
+    backgroundColor: '#161818',
+    border: '1px solid #0bcdd7',
+    boxShadow: '3px 5px 7px #0bcdd78f',
   },
+
+  link: {
+    paddingBottom: 25,
+    display: 'block',
+    position: 'relative',
+    bottom: 0,
+    textAlign: 'center',
+    textDecoration: 'none',
+    color: '#fff',
+
+    transition: 'color 0.3s ease',
+
+    '&:active, &:hover': {
+      color: '#0bcdd7',
+    }
+  }
 });
 
 export const App = () => {
@@ -27,13 +47,18 @@ export const App = () => {
 
   return (
     <div className={classes.app}>
-      <Header />
 
-      {isListVisible && (
-        <TodoList />
-      )}
+      <div className={classes.content}>
+        <Header />
 
-      <Footer />
+        {isListVisible && (
+          <TodoList />
+        )}
+
+        <Footer />
+      </div>
+
+      <a className={classes.link} href='https://katolista.github.io/KatOlista-portfolio/'>@KatOlista</a>
     </div>
   );
 };
