@@ -1,3 +1,5 @@
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import { createUseStyles } from 'react-jss';
 
 import { useAppSelector } from './app/hooks';
@@ -31,8 +33,8 @@ const useStyles = createUseStyles({
     padding: 5,
     borderRadius: 15,
     transform: 'translateX(-50%)',
-    background: 'rgba(0,0,0,0.2)',
-    '-webkit-backdrop-filter': 'blur(7px)',
+    background: 'rgba(0,0,0,0.25)',
+    '-webkit-backdrop-filter': 'blur(10px)',
     backdropFilter: 'blur(7px)',
   },
 
@@ -55,6 +57,18 @@ const useStyles = createUseStyles({
 
 export const App = () => {
   const classes = useStyles();
+
+  gsap.registerPlugin(useGSAP);
+
+  useGSAP(() => {
+    gsap
+      .timeline()
+      .from(`.${classes.content}`, {
+        y: '-100%',
+        delay: 0.5,
+        duration: 1,
+      });
+  });
   
   const { todos } = useAppSelector(state => state.todos);
   const isListVisible = !!todos.length;

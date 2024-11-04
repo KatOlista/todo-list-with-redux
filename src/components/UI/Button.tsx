@@ -36,6 +36,7 @@ const useStyles = createUseStyles({
   },
   selected: {
     backgroundColor: '#5a5858af',
+    color: '#f4dbda',
     transform: 'scale(1.03)',
   },
 });

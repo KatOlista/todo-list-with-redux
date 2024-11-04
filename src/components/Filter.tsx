@@ -7,6 +7,7 @@ import { setSelectedOption } from '../features/filterOptionSlice';
 
 const useStyles = createUseStyles({
   filter: {
+    width: '100%',
     display: 'flex',
     justifyContent: 'space-around',
     gap: 20,
