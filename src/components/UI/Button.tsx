@@ -7,11 +7,11 @@ const useStyles = createUseStyles({
   button: {
     padding: '10px 20px',
     width: '100%',
-    backgroundColor: '#5a5858',
+    backgroundColor: '#5a585859',
     color: '#fff',
     borderRadius: 5,
     border: '1px solid transparent',
-    boxShadow: '1px 1px 4px #fff',
+    boxShadow: '1px 1px 4px #ffffff8f',
 
     transition: 'all 0.3s ease',
 
@@ -35,7 +35,8 @@ const useStyles = createUseStyles({
     }
   },
   selected: {
-    backgroundColor: '#0bcdd7',
+    backgroundColor: '#5a5858af',
+    transform: 'scale(1.03)',
   },
 });
 

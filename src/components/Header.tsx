@@ -5,10 +5,10 @@ import { v4 as uuid } from 'uuid';
 import { useAppDispatch, useAppSelector } from '../app/hooks';
 import { ERROR_MESSAGES, MAX_LENGTH } from '../utils';
 import { addTodo } from '../features/todosSlice';
-import { 
-  clearForm, 
-  setError, 
-  setTitle, 
+import {
+  clearForm,
+  setError,
+  setTitle,
 } from '../features/newTodoSlice';
 import { ErrorNotification } from '.';
 
@@ -16,6 +16,7 @@ const useStyles = createUseStyles({
   form: {
     paddingBlock: 10,
   },
+
   input: {
     width: '100%',
     padding: 16,
@@ -34,7 +35,7 @@ const useStyles = createUseStyles({
     '&::placeholder': {
       fontStyle: 'italic',
       fontWeight: 300,
-      color: '#0bcdd7',
+      color: '#ffffff88',
     },
     '&:focus-visible': {
       outline: 'white auto 1px',

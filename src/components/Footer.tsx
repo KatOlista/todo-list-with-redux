@@ -22,6 +22,10 @@ const useStyles = createUseStyles({
     justifyContent: 'space-between',
     color: '#fff',
   },
+  onLoadItem: {
+    color: '#16181888 !important',
+    transition: 'color 0.3s ease',
+  },
 
   '@media (min-width: 990px)': {
     footer: {
@@ -34,7 +38,7 @@ const useStyles = createUseStyles({
     
     todoCount: {
       paddingTop: 25
-    }
+    },
   }
 });
 
@@ -44,7 +48,10 @@ export const Footer = () => {
   const handleExportTodosAsImg = () => {
     const capturedElement = document.getElementById('capture') as HTMLElement;
     const liArray = Array.from(capturedElement.getElementsByTagName('li'));
-    liArray.forEach(li => li.classList.remove('animate__slideInDown'));
+    liArray.forEach(li => {
+      li.classList.remove('animate__slideInDown');
+      li.classList.add(`${classes.onLoadItem}`);
+    });
     html2canvas(capturedElement)?.then(canvas => {
         const fileName = 'todos.png';
         const href = canvas.toDataURL('image/png');
@@ -54,7 +61,10 @@ export const Footer = () => {
         document.body.appendChild(element);
         element.click();
         document.body.removeChild(element);
-        liArray.forEach(li => li.classList.add('animate__slideInDown'));
+        liArray.forEach(li => {
+          li.classList.add('animate__slideInDown');
+          li.classList.remove(`${classes.onLoadItem}`);
+        });
     });
   };
 

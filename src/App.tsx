@@ -7,23 +7,38 @@ import {
   TodoList, 
 } from './components';
 
+import bg from './assets/bg4.webp';
+
 const useStyles = createUseStyles({
   app: {
+    minHeight: '100vh',
+    height: '100%',
+    padding: '100px 0 50px',
+    display: 'flex',
+    flexDirection: 'column',
+    background: `url(${bg}) 100% 100%/cover no-repeat`,
+  },
+
+  main: {
+    flex: 'auto',
   },
 
   content: {
-    margin: '100px auto 100px',
+    left: '50%',
     position: 'relative',
     minWidth: 290,
+    maxWidth: 450,
     padding: 5,
-    borderRadius: 5,
-    backgroundColor: '#161818',
-    border: '1px solid #0bcdd7',
-    boxShadow: '3px 5px 7px #0bcdd78f',
+    borderRadius: 15,
+    transform: 'translateX(-50%)',
+    background: 'rgba(0,0,0,0.2)',
+    '-webkit-backdrop-filter': 'blur(7px)',
+    backdropFilter: 'blur(7px)',
   },
 
   link: {
-    paddingBottom: 25,
+    paddingTop: 50,
+    paddingBottom: 50,
     display: 'block',
     position: 'relative',
     bottom: 0,
@@ -34,7 +49,7 @@ const useStyles = createUseStyles({
     transition: 'color 0.3s ease',
 
     '&:active, &:hover': {
-      color: '#0bcdd7',
+      color: '#5a5858af',
     }
   }
 });
@@ -48,15 +63,17 @@ export const App = () => {
   return (
     <div className={classes.app}>
 
-      <div className={classes.content}>
-        <Header />
+      <main className={classes.main}>
+        <div className={classes.content}>
+          <Header />
 
-        {isListVisible && (
-          <TodoList />
-        )}
+          {isListVisible && (
+            <TodoList />
+          )}
 
-        <Footer />
-      </div>
+          <Footer />
+        </div>
+      </main>
 
       <a className={classes.link} href='https://katolista.github.io/KatOlista-portfolio/'>@KatOlista</a>
     </div>

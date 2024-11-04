@@ -8,7 +8,6 @@ import { Todo } from '../types';
 const useStyles = createUseStyles({
   list: {
     padding: 5,
-    backgroundColor: '#161818',
     animationName: 'appearance',
     animationDuration: '0.5s',
   },

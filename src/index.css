@@ -7,6 +7,11 @@
   box-sizing: border-box;
 }
 
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
 body {
   margin: 0;
   display: flex;
@@ -22,4 +27,11 @@ h1 {
 
 ul {
   margin: 0;
+}
+
+.background {
+  /* background: #16181888;
+  transition: background 0.3s ease; */
+  color: #16181888;
+  transition: color 0.3s ease;
 }
