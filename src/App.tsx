@@ -38,7 +38,6 @@ const useStyles = createUseStyles({
 
   link: {
     paddingTop: 50,
-    paddingBottom: 50,
     display: 'block',
     position: 'relative',
     bottom: 0,
