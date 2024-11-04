@@ -18,7 +18,7 @@ const useStyles = createUseStyles({
     padding: '100px 0 50px',
     display: 'flex',
     flexDirection: 'column',
-    background: `url(${bg}) 100% 100%/cover no-repeat`,
+    background: `url(${bg}) 100% 100%/ cover no-repeat`,
   },
 
   main: {
@@ -63,8 +63,16 @@ export const App = () => {
   useGSAP(() => {
     gsap
       .timeline()
+      .fromTo(`.${classes.app}`, {
+        transform: 'scale(5) rotate(-60deg) translate(-25%, -10%)',
+        left: '-50%',
+      }, {
+        transform: 'scale(1) rotate(0deg) translateX(0)',
+        left: 0,
+        duration: 2,
+      })
       .from(`.${classes.content}`, {
-        y: '-100%',
+        y: '-150%',
         delay: 0.5,
         duration: 1,
       });
