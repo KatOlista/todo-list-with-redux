@@ -5,9 +5,6 @@ import { Todo } from '../types';
 import { setTodos } from '../features/todosSlice';
 import { useAppDispatch, useAppSelector } from '../app/hooks';
 
-import circle from '../assets/circle.svg';
-import checkedCircle from '../assets/checked-circle.svg';
-
 const useStyles = createUseStyles({
   item: {
     listStyle: 'none',
@@ -25,7 +22,7 @@ const useStyles = createUseStyles({
     width: 50,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center left',
-    backgroundImage: `url(${circle})`,
+    backgroundImage: `url('./circle.svg')`,
   },
   checkbox: {
     opacity: 0,
@@ -34,7 +31,7 @@ const useStyles = createUseStyles({
     margin: 0,
   },
   completed: {
-    backgroundImage: `url(${checkedCircle})`,
+    backgroundImage: `url('./checked-circle.svg')`
   },
 });
 

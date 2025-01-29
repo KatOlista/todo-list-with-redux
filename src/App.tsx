@@ -3,10 +3,10 @@ import { useGSAP } from '@gsap/react';
 import { createUseStyles } from 'react-jss';
 
 import { useAppSelector } from './app/hooks';
-import { 
-  Footer, 
-  Header, 
-  TodoList, 
+import {
+  Footer,
+  Header,
+  TodoList,
 } from './components';
 
 import bg from './assets/bg4.webp';
@@ -19,6 +19,7 @@ const useStyles = createUseStyles({
     display: 'flex',
     flexDirection: 'column',
     background: `url(${bg}) 100% 100%/ cover no-repeat`,
+    transition: 'background 0.2s linear',
   },
 
   main: {
@@ -64,17 +65,15 @@ export const App = () => {
     gsap
       .timeline()
       .fromTo(`.${classes.app}`, {
-        transform: 'scale(5) rotate(-60deg) translate(-25%, -10%)',
-        left: '-50%',
+        transform: 'scale(5) rotate(-10deg) translate(-25%, -10%)',
       }, {
         transform: 'scale(1) rotate(0deg) translateX(0)',
-        left: 0,
-        duration: 2,
+        duration: 1.5,
       })
       .from(`.${classes.content}`, {
         y: '-150%',
-        delay: 0.5,
-        duration: 1,
+        delay: 0.3,
+        duration: 0.2,
       });
   });
   
