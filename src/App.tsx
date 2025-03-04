@@ -63,17 +63,10 @@ export const App = () => {
 
   useGSAP(() => {
     gsap
-      .timeline()
-      .fromTo(`.${classes.app}`, {
-        transform: 'scale(5) rotate(-10deg) translate(-25%, -10%)',
-      }, {
-        transform: 'scale(1) rotate(0deg) translateX(0)',
-        duration: 1.5,
-      })
       .from(`.${classes.content}`, {
-        y: '-150%',
+        opacity: 0,
         delay: 0.3,
-        duration: 0.2,
+        duration: 1,
       });
   });
   

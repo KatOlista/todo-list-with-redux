@@ -32,8 +32,6 @@ ul {
 }
 
 .background {
-  /* background: #16181888;
-  transition: background 0.3s ease; */
   color: #16181888;
   transition: color 0.3s ease;
 }
